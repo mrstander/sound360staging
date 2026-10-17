@@ -43,7 +43,7 @@ export function LogoCarousel() {
   const infiniteLogos = [...logos, ...logos]
 
   return (
-    <section className="py-5 bg-sound360 overflow-hidden" aria-labelledby="brands-heading">
+    <section className="py-5  overflow-hidden" aria-labelledby="brands-heading">
       <div className="container mx-auto px-4">
         <h2 id="brands-heading" className="sr-only">
           Professional AV and event production brands SOUND360 works with
@@ -53,9 +53,7 @@ export function LogoCarousel() {
 
         {/* Continuous Scrolling Logo Carousel */}
         <div className="relative">
-          {/* Gradient fade edges */}
-          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-sound360 to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-sound360 to-transparent z-10" />
+          
 
           {/* Scrolling container */}
           <div className="flex animate-scroll-left space-x-8">

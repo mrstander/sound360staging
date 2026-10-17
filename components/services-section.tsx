@@ -89,7 +89,7 @@ export function ServicesSection() {
                 <div className="grid lg:grid-cols-2 gap-0 items-center">
                   {/* Text Content - Left Side */}
                   <div className="p-12 text-center lg:text-left flex flex-col justify-center">
-                    <div className="bg-sound360 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 mx-auto lg:mx-0">
+                    <div className=" w-16 h-16 rounded-2xl flex items-center justify-center mb-6 mx-auto lg:mx-0">
                      
                     </div>
                     <h3 className="text-3xl md:text-4xl font-bold text-black mb-6">{services[4].name}</h3>
@@ -103,7 +103,7 @@ export function ServicesSection() {
                             key={featureIndex}
                             className="flex items-center text-gray-600 justify-center lg:justify-start"
                           >
-                            <div className="w-2 h-2 bg-sound360 rounded-full mr-3" />
+                            <div className="w-2 h-2 rounded-full mr-3" />
                             {feature}
                           </li>
                         ))}
