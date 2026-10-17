@@ -187,17 +187,17 @@ export function ServicePage({ service }: { service: Service }) {
             <div className="max-w-6xl mx-auto grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
               <div className="lg:col-span-3">
                 <p className="text-sm font-semibold uppercase tracking-widest text-sound360 mb-3">{service.name}</p>
-                <div className="space-y-5 text-lg md:text-xl lg:text-2xl text-gray-700 leading-relaxed">
+                <div className="space-y-5 text-lg md:text-lg lg:text-lg text-gray-600 leading-relaxed">
                   {service.intro.map((p) => (
                     <p key={p}>{p}</p>
                   ))}
                 </div>
               </div>
               <aside className="lg:col-span-2 bg-gray-50 border border-gray-100 rounded-3xl p-8">
-                <h2 className="text-xl font-bold text-black mb-5">What we supply</h2>
+                <h2 className="text-xl font-bold text-gray-600 mb-5">What we supply</h2>
                 <ul className="space-y-3 mb-8">
                   {service.features.map((f) => (
-                    <li key={f} className="flex items-center gap-3 text-gray-700">
+                    <li key={f} className="flex items-center gap-3 text-gray-600">
                       <CheckCircle2 className="w-5 h-5 text-sound360 flex-shrink-0" aria-hidden />
                       {f}
                     </li>
