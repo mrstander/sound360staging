@@ -75,6 +75,9 @@
 }
 
 @theme inline {
+  /* SOUND360 brand blue (taken from the logo). Used by bg-sound360, text-sound360 etc. */
+  --color-sound360: #0a93e4;
+  --color-sound360-dark: #0877b9;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);

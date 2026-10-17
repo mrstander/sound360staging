@@ -6,6 +6,7 @@ import { Menu, X, Phone, Mail, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
+import { services as allServices } from "@/lib/services"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -23,18 +24,13 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const services = [
-    { name: "Professional Audio", href: "/services/audio" },
-    { name: "Stage Lighting", href: "/services/lighting" },
-    { name: "Visual Solutions", href: "/services/visual" },
-    { name: "Event Production", href: "/services/production" },
-    { name: "Dancefloor", href: "/services/dancefloor" },
-  ]
+  const services = allServices.map(({ name, href }) => ({ name, href }))
 
   const navItems = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Services", href: "/services", hasDropdown: true },
+    { name: "FAQ", href: "/faq" },
     { name: "Contact", href: "/contact" },
   ]
 
@@ -78,7 +74,7 @@ export function Header() {
           <Link href="/" className="flex items-center group">
             <Image
               src="/images/sound360-logo.png"
-              alt="Sound360 Logo"
+              alt="SOUND360 logo"
               width={250}
               height={100}
               className="transition-all duration-300"
@@ -187,9 +183,11 @@ export function Header() {
                   )}
                 </div>
               ))}
-              <Button className="bg-sound360 hover:bg-sound360-dark text-white mt-4 rounded-full">
-                Get Quote
-              </Button>
+              <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
+                <Button className="w-full bg-sound360 hover:bg-sound360-dark text-white mt-4 rounded-full">
+                  Get Quote
+                </Button>
+              </Link>
             </nav>
           </div>
         )}

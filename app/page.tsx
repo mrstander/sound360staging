@@ -8,9 +8,9 @@ import { WhyChooseUs } from "@/components/why-choose-us"
 import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
-  title: "Sound360 - Professional Audio, Lighting & Visual Solutions | Cape Town",
+  title: "SOUND360 | Professional AV & Event Production in Cape Town",
   description:
-    "Cape Town's premier event production company. Professional audio systems, stage lighting, LED displays, rigging, and complete event management services across South Africa.",
+    "Customised audio, lighting, LED screens, TV hire and event production in Cape Town for corporate, private and large-scale events, from 10 to 10,000 guests.",
   keywords: [
     "event production Cape Town",
     "professional audio rental",
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
     "Sound360",
   ].join(", "),
   openGraph: {
-    title: "Sound360 - Professional Event Production | Cape Town",
+    title: "SOUND360 | Professional AV & Event Production in Cape Town",
     description:
-      "Cape Town's premier event production company specializing in professional audio, lighting, and visual solutions.",
+      "Audio, lighting, LED screens, TV hire, structures and production. One professional team, a customised solution.",
     url: "https://sound360.co.za",
     siteName: "Sound360",
     images: [
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
         url: "/images/hero1.webp",
         width: 1200,
         height: 630,
-        alt: "Sound360 Professional Event Production Services",
+        alt: "SOUND360 professional AV and event production in Cape Town",
       },
     ],
     locale: "en_ZA",
@@ -43,9 +43,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sound360 - Professional Event Production | Cape Town",
+    title: "SOUND360 | Professional AV & Event Production in Cape Town",
     description:
-      "Cape Town's premier event production company specializing in professional audio, lighting, and visual solutions.",
+      "Audio, lighting, LED screens, TV hire, structures and production. One professional team, a customised solution.",
     images: ["/images/hero1.webp"],
   },
   alternates: {

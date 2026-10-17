@@ -244,11 +244,11 @@ export default function ContactPage() {
                         </label>
                         <label className="flex items-center">
                           <input type="checkbox" name="lighting" className="mr-2" />
-                          <span className="text-sm">Stage Lighting</span>
+                          <span className="text-sm">Professional Lighting</span>
                         </label>
                         <label className="flex items-center">
                           <input type="checkbox" name="visual" className="mr-2" />
-                          <span className="text-sm">Visual Solutions</span>
+                          <span className="text-sm">Visual Solutions / LED Screens &amp; TV Hire</span>
                         </label>
                         <label className="flex items-center">
                           <input type="checkbox" name="production" className="mr-2" />
@@ -256,7 +256,11 @@ export default function ContactPage() {
                         </label>
                         <label className="flex items-center">
                           <input type="checkbox" name="dance" className="mr-2" />
-                          <span className="text-sm">Dance Floor</span>
+                          <span className="text-sm">Dance Floors</span>
+                        </label>
+                        <label className="flex items-center">
+                          <input type="checkbox" name="advice" className="mr-2" />
+                          <span className="text-sm">I&apos;m Not Sure – I Need Advice</span>
                         </label>
                       </div>
                     </div>

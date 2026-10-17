@@ -15,9 +15,11 @@ export async function sendContactEmail(formData: FormData) {
   // Get selected services
   const services = []
   if (formData.get("audio")) services.push("Professional Audio")
-  if (formData.get("lighting")) services.push("Stage Lighting")
-  if (formData.get("visual")) services.push("Visual Solutions")
+  if (formData.get("lighting")) services.push("Professional Lighting")
+  if (formData.get("visual")) services.push("Visual Solutions / LED Screens & TV Hire")
   if (formData.get("production")) services.push("Event Production")
+  if (formData.get("dance")) services.push("Dance Floors")
+  if (formData.get("advice")) services.push("I'm Not Sure – I Need Advice")
 
   try {
     const { data, error } = await resend.emails.send({

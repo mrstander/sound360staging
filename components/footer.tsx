@@ -1,19 +1,15 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Mail, Instagram, Facebook, Linkedin, MapPin } from "lucide-react"
+import { services as allServices } from "@/lib/services"
 
 export function Footer() {
-  const services = [
-    { name: "Professional Audio", href: "/services/audio" },
-    { name: "Lighting Solutions", href: "/services/lighting" },
-    { name: "Visual Solutions", href: "/services/visual" },
-    { name: "Event Production", href: "/services/production" },
-    { name: "Dance Floor", href: "/services/dancefloor" },
-  ]
+  const services = allServices.map(({ name, href }) => ({ name, href }))
 
   const quickLinks = [
     { name: "About Us", href: "/about" },
     { name: "Services", href: "/services" },
+    { name: "FAQ", href: "/faq" },
     { name: "Contact", href: "/contact" },
     { name: "Get Quote", href: "/contact" },
   ]
@@ -29,7 +25,7 @@ export function Footer() {
               <div className="relative">
                 <Image
                   src="/images/sound360-logo.png"
-                  alt="Sound360 Logo"
+                  alt="SOUND360 logo"
                   width={170}
                   height={90}
                 />
@@ -37,9 +33,9 @@ export function Footer() {
             </Link>
 
             <p className="text-gray-300 leading-relaxed mb-6 max-w-md">
-              Cape Town's premier provider of professional audio,
-              lighting, and visual solutions. We transform events with
-              cutting-edge technology and unmatched expertise.
+              Cape Town-based event production and AV company providing
+              customised audio, lighting, LED screens, TV hire, event
+              structures and technical production solutions.
             </p>
 
             {/* Contact Info */}
@@ -136,7 +132,7 @@ export function Footer() {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 text-sm text-gray-400">
-              <p>&copy; 2025 Sound360. All Rights Reserved.</p>
+              <p>&copy; {new Date().getFullYear()} SOUND360. All Rights Reserved.</p>
               <div className="flex space-x-4">
                 <Link
                   href="#"
@@ -153,7 +149,6 @@ export function Footer() {
               </div>
             </div>
 
-            <div className="flex items-center space-x-2 bg-sound360 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-sound360-dark transition-colors cursor-pointer"></div>
           </div>
         </div>
       </div>

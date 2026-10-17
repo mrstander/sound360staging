@@ -79,7 +79,7 @@ export function HeroSection() {
           >
             <Image
               src={slide.image || "/placeholder.svg"}
-              alt={`Sound360 Event Production Slide ${index + 1}`}
+              alt={index === 0 ? "SOUND360 professional audio and event production setup in Cape Town" : "SOUND360 event sound and lighting production in Cape Town"}
               fill
               className="object-cover scale-105"
               priority={index === 0}
@@ -98,7 +98,7 @@ export function HeroSection() {
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
         <div className="transition-all duration-1000 ease-in-out">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
+          <p className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
             <span className="text-white">{content.title}</span>
             {content.subtitle && (
               <>
@@ -106,7 +106,7 @@ export function HeroSection() {
                 <span className="text-sound360 text-4xl md:text-5xl lg:text-6xl">{content.subtitle}</span>
               </>
             )}
-          </h1>
+          </p>
 
           {content.description && (
             <p className="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed max-w-4xl mx-auto">

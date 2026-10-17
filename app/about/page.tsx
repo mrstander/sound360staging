@@ -5,9 +5,9 @@ import { WhyChooseUs } from "@/components/why-choose-us"
 import Image from "next/image"
 
 export const metadata: Metadata = {
-  title: "About Sound360 - Cape Town's Premier Event Production Company",
+  title: "About SOUND360 | Cape Town Event Production & AV Company",
   description:
-    "Learn about Sound360's journey since 2009. We're Cape Town's trusted event production specialists, delivering professional audio, lighting, and visual solutions across South Africa.",
+    "SOUND360 is a Cape Town event production and AV company, founded in 2021, delivering customised audio, lighting, LED screens and TV hire at 500+ events.",
   keywords: [
     "about Sound360",
     "event production company Cape Town",
@@ -19,8 +19,8 @@ export const metadata: Metadata = {
     "concert production",
   ].join(", "),
   openGraph: {
-    title: "About Sound360 - Cape Town's Premier Event Production Company",
-    description: "Learn about Sound360's journey since 2009. Cape Town's trusted event production specialists.",
+    title: "About SOUND360 | Cape Town Event Production & AV Company",
+    description: "Cape Town-based event production and AV company, founded in 2021, with more than 500 events delivered.",
     url: "https://sound360.co.za/about",
     siteName: "Sound360",
     images: [
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
         url: "/images/hero1.webp",
         width: 1200,
         height: 630,
-        alt: "Sound360 Team - Professional Event Production",
+        alt: "SOUND360 event production team in Cape Town",
       },
     ],
     locale: "en_ZA",
@@ -36,8 +36,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Sound360 - Cape Town's Premier Event Production Company",
-    description: "Learn about Sound360's journey since 2009. Cape Town's trusted event production specialists.",
+    title: "About SOUND360 | Cape Town Event Production & AV Company",
+    description: "Cape Town-based event production and AV company, founded in 2021, with more than 500 events delivered.",
     images: ["/images/hero1.webp"],
   },
   alternates: {
@@ -62,8 +62,8 @@ export default function AboutPage() {
                 About <span className="text-sound360">Sound360</span>
               </h1>
               <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
-                We are South Africa's premier provider of professional audio, lighting, and visual solutions,
-                transforming events with cutting-edge technology and unmatched expertise.
+                SOUND360 is a Cape Town-based event production and AV company providing customised audio, lighting,
+                LED screens, TV hire, event structures and technical production solutions.
               </p>
             </div>
           </div>
@@ -78,7 +78,16 @@ export default function AboutPage() {
                   <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">Our Story</h2>
                   <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
                     <p>
-                      Founded in 2009, Sound360 began as a small audio rental company with a big vision: to transform
+                      We work across corporate events, conferences, brand activations, private events, live productions
+                      and large-scale events.
+                    </p>
+                    <p>
+                      From small events requiring a simple, professional setup to productions for thousands of guests,
+                      our approach remains the same: understand what the event needs and build the right technical
+                      solution around it.
+                    </p>
+                    <p>
+                      Founded in 2021, SOUND360 began as a small audio rental company with a big vision: to transform
                       events across South Africa with professional-grade equipment and exceptional service.
                     </p>
                     <p>
@@ -87,7 +96,7 @@ export default function AboutPage() {
                       event production services.
                     </p>
                     <p>
-                      Today, we're proud to have worked on over 500 events, from intimate corporate gatherings to
+                      Today, we're proud to have worked on more than 500 events, from intimate corporate gatherings to
                       large-scale festivals, always maintaining our commitment to excellence and innovation.
                     </p>
                   </div>
@@ -97,7 +106,7 @@ export default function AboutPage() {
                   <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
                     <Image
                       src="/images/audio2.jpg"
-                      alt="Sound360 team setting up professional event equipment"
+                      alt="SOUND360 team setting up professional event audio equipment in Cape Town"
                       width={600}
                       height={600}
                       className="w-full h-full object-cover"

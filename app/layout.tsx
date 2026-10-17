@@ -8,9 +8,9 @@ import { WhatsAppWidget } from "@/components/whatsapp-widget"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Sound360 - Professional Audio, Lighting & Visual Solutions | South Africa",
+  title: "SOUND360 | Professional AV & Event Production in Cape Town",
   description:
-    "Expert sound, lighting, and visual solutions for events in South Africa. Professional audio equipment, stage lighting, rigging, livestreaming, and complete event production services.",
+    "Customised audio, lighting, LED screens, TV hire and event production solutions in Cape Town for corporate events, conferences, brand activations, private events and large-scale events.",
   keywords:
     "sound equipment, lighting, audio visual, event production, rigging, trussing, livestreaming, South Africa, professional audio, stage lighting, event services",
   authors: [{ name: "Sound360" }],
@@ -26,17 +26,17 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Sound360 - Professional Audio, Lighting & Visual Solutions",
+    title: "SOUND360 | Professional AV & Event Production in Cape Town",
     description:
-      "Expert sound, lighting, and visual solutions for events in South Africa.",
+      "Customised audio, lighting, LED screens, TV hire and event production solutions in Cape Town.",
     url: "https://sound360.co.za",
     siteName: "Sound360",
     images: [
       {
-        url: "/images/og-image.jpg",
+        url: "/images/hero1.webp",
         width: 1200,
         height: 630,
-        alt: "Sound360 Professional Event Services",
+        alt: "SOUND360 professional AV and event production in Cape Town",
       },
     ],
     locale: "en_ZA",
@@ -44,9 +44,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sound360 - Professional Audio, Lighting & Visual Solutions",
-    description: "Expert sound, lighting, and visual solutions for events in South Africa.",
-    images: ["/images/og-image.jpg"],
+    title: "SOUND360 | Professional AV & Event Production in Cape Town",
+    description: "Customised audio, lighting, LED screens, TV hire and event production solutions in Cape Town.",
+    images: ["/images/hero1.webp"],
   },
   robots: {
     index: true,
@@ -91,26 +91,33 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
-              name: "Sound360",
-              description: "Professional audio, lighting, and visual solutions for events",
+              name: "SOUND360",
+              description:
+                "Cape Town-based event production and AV company providing customised audio, lighting, LED screens, TV hire, event structures and technical production solutions.",
+              foundingDate: "2021",
               url: "https://sound360.co.za",
               telephone: "+27671114362",
               email: "info@sound360.co.za",
               address: {
                 "@type": "PostalAddress",
+                addressLocality: "Cape Town",
+                addressRegion: "Western Cape",
                 addressCountry: "ZA",
               },
               geo: {
                 "@type": "GeoCoordinates",
-                latitude: -26.2041,
-                longitude: 28.0473,
+                latitude: -33.9249,
+                longitude: 18.4241,
               },
               openingHours: "Mo-Fr 08:00-17:00",
-              priceRange: "$$",
-              serviceArea: {
-                "@type": "Country",
-                name: "South Africa",
-              },
+              sameAs: [
+                "https://www.instagram.com/sound_360_sa/",
+                "https://www.facebook.com/profile.php?id=100064243863594",
+              ],
+              areaServed: [
+                { "@type": "City", name: "Cape Town" },
+                { "@type": "Country", name: "South Africa" },
+              ],
               hasOfferCatalog: {
                 "@type": "OfferCatalog",
                 name: "Event Services",
@@ -119,28 +126,40 @@ export default function RootLayout({
                     "@type": "Offer",
                     itemOffered: {
                       "@type": "Service",
-                      name: "Professional Audio Services",
+                      name: "Professional Audio Hire",
+                      url: "https://sound360.co.za/services/audio",
                     },
                   },
                   {
                     "@type": "Offer",
                     itemOffered: {
                       "@type": "Service",
-                      name: "Stage Lighting Solutions",
+                      name: "Professional Event Lighting",
+                      url: "https://sound360.co.za/services/lighting",
                     },
                   },
                   {
                     "@type": "Offer",
                     itemOffered: {
                       "@type": "Service",
-                      name: "Visual & LED Displays",
+                      name: "LED Screen & TV Hire",
+                      url: "https://sound360.co.za/services/visual",
                     },
                   },
                   {
                     "@type": "Offer",
                     itemOffered: {
                       "@type": "Service",
-                      name: "Rigging & Trussing",
+                      name: "Full Event Production, Rigging & Trussing",
+                      url: "https://sound360.co.za/services/production",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "Dance Floor Hire",
+                      url: "https://sound360.co.za/services/dancefloor",
                     },
                   },
                 ],

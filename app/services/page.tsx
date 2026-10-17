@@ -1,15 +1,16 @@
 import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { Volume2, Lightbulb, Monitor, Settings } from "lucide-react"
+import { Volume2, Lightbulb, Monitor, Settings, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
+import { services as allServices } from "@/lib/services"
 
 export const metadata: Metadata = {
-  title: "Professional Event Services - Audio, Lighting & Visual Solutions | Sound360",
+  title: "Event AV Services in Cape Town | Audio, Lighting & LED | SOUND360",
   description:
-    "Comprehensive event production services in Cape Town. Professional audio systems, stage lighting, LED displays, rigging, livestreaming, and complete event management solutions.",
+    "Event services in Cape Town: professional audio, lighting, LED screens and TV hire, full event production with rigging and trussing, and dance floors.",
   keywords: [
     "event services Cape Town",
     "professional audio rental",
@@ -24,14 +25,14 @@ export const metadata: Metadata = {
     "visual solutions",
   ].join(", "),
   openGraph: {
-    title: "Professional Event Services - Audio, Lighting & Visual Solutions | Sound360",
+    title: "Event AV Services in Cape Town | SOUND360",
     description:
-      "Comprehensive event production services in Cape Town. Professional audio, lighting, visual solutions and more.",
+      "Professional audio, lighting, LED screens, TV hire, event production and dance floors in Cape Town.",
     url: "https://sound360.co.za/services",
     siteName: "Sound360",
     images: [
       {
-        url: "/images/audio.jpeg",
+        url: "/images/audio2.jpg",
         width: 1200,
         height: 630,
         alt: "Sound360 Professional Event Services",
@@ -42,10 +43,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Professional Event Services | Sound360",
+    title: "Event AV Services in Cape Town | SOUND360",
     description:
-      "Comprehensive event production services in Cape Town. Professional audio, lighting, visual solutions and more.",
-    images: ["/images/audio.jpeg"],
+      "Professional audio, lighting, LED screens, TV hire, event production and dance floors in Cape Town.",
+    images: ["/images/audio2.jpg"],
   },
   alternates: {
     canonical: "https://sound360.co.za/services",
@@ -53,65 +54,31 @@ export const metadata: Metadata = {
 }
 
 export default function ServicesPage() {
-  const services = [
-    {
-      name: "Professional Audio",
-      icon: Volume2,
-      description: "Crystal-clear sound systems, mixing consoles, and acoustic solutions for any venue size.",
-      features: ["Digital Consol Mixing", "High quality Audio", "Wireless Microphones", "Recording & Playback"],
-      image: "/images/audio2.jpg",
-      href: "/services/audio",
-      details:
-        "From intimate presentations to large-scale concerts, our professional audio solutions ensure every word and note is heard with perfect clarity.",
-    },
-    {
-      name: "Stage Lighting",
-      icon: Lightbulb,
-      description: "Dynamic lighting design that transforms your event with spectacular visual effects.",
-      features: ["LED Moving Lights", "Intelligent Fixtures", "Haze & Fog Effects", "DMX Control Systems"],
-      image: "/images/lighting/light1.jpg",
-      href: "/services/lighting",
-      details:
-        "Create the perfect atmosphere with our cutting-edge lighting solutions, from subtle ambiance to dramatic stage productions.",
-    },
-    {
-      name: "Visual Solutions",
-      icon: Monitor,
-      description: "High-resolution LED displays and projection systems for impactful visual presentations.",
-      features: ["LED Video Walls", "Projection Mapping", "Live Camera Systems", "Content Management"],
-      image: "/images/visual/visual2.jpg",
-      href: "/services/visual",
-      details:
-        "Engage your audience with stunning visual displays, from corporate presentations to immersive brand experiences.",
-    },
-    {
-      name: "Event Production",
-      icon: Settings,
-      description: "Complete event production including rigging, trussing, livestreaming, and power solutions.",
-      features: ["Rigging & Trussing", "Livestreaming", "Power Distribution", "Project Management"],
-      image: "/images/events/event1.jpg",
-      href: "/services/production",
-      details:
-        "Full-service event production that handles every technical aspect, allowing you to focus on your event's success.",
-    },
-    {
-      name: "Dance Floor",
-      icon: Settings,
-      description:
-        "Create the perfect space with flooring to elevate your exhibition or dance the night away, often enhanced by lighting and effects to create the desired atmosphere.",
-      features: ["LED Dance Floors", "Black and White", "Glossy Dance Floors", "Portable Dance Floors", "Underflooring"],
-      image: "/images/dancefloor/dance1.jpg",
-      href: "/services/dancefloor",
-      details: "",
-    },
-  ]
+  const icons = { audio: Volume2, lighting: Lightbulb, visual: Monitor, production: Settings, dancefloor: Sparkles }
+  const details: Record<string, string> = {
+    audio: "From intimate presentations for 10 people to large-scale events, we design the sound system around your venue, audience and event format.",
+    lighting: "From subtle ambient lighting to dynamic stage effects, every setup is individually programmed and controlled by our professional technicians.",
+    visual: "From individual TV screens to completely customised LED screen configurations, we build a visual solution around your event, venue and audience.",
+    production: "Audio, lighting, LED screens, TV hire, rigging, trussing and event structures from one professional team.",
+    dancefloor: "",
+  }
+  const services = allServices.map((s) => ({
+    name: s.name,
+    icon: icons[s.slug],
+    description: s.summary,
+    features: s.features,
+    image: s.cardImage,
+    href: s.href,
+    cta: s.cta,
+    details: details[s.slug] ?? "",
+  }))
 
   return (
     <>
       <Header />
       <main className="pt-32">
         {/* Hero Section */}
-        <section className="py-24 bg-black text-white relative overflow-hidden bg-[url('/images/section-background.png')] bg-cover bg-cente">
+        <section className="py-24 bg-black text-white relative overflow-hidden bg-[url('/images/section-background.png')] bg-cover bg-center">
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl" />
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl" />
@@ -122,7 +89,7 @@ export default function ServicesPage() {
                 Our <span className="text-sound360">Services</span>
               </h1>
               <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
-                Comprehensive event production services across corporate events, weddings, anniversaries, school productions, brand activations and high-end private celebrations, brought to life with professional-grade equipment and experienced execution.
+                Customised audio, lighting, LED screens, TV hire and event production solutions for corporate events, conferences, brand activations, private events, live productions and large-scale events.
               </p>
             </div>
           </div>
@@ -163,7 +130,7 @@ export default function ServicesPage() {
                             variant="outline"
                             className="bg-black hover:bg-gray-800 text-white hover:text-white py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                           >
-                            Learn More
+                            {service.cta}
                           </Button>
                         </Link>
                       </div>
@@ -172,7 +139,7 @@ export default function ServicesPage() {
                         <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
                           <Image
                             src={service.image || "/placeholder.svg"}
-                            alt={service.name}
+                            alt={`${service.name} for events in Cape Town`}
                             width={600}
                             height={450}
                             className="w-full h-full object-cover"

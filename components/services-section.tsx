@@ -3,53 +3,18 @@
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
+import { services as allServices } from "@/lib/services"
 
 
 export function ServicesSection() {
-  const services = [
-    {
-      name: "Professional Audio",
-      
-      description: "Crystal-clear sound systems, mixing consoles, and acoustic solutions for any venue size.",
-      features: ["Digital Console Mixing", "High quality Audio", "Wireless Microphones", "Recording & Playback"],
-
-      image: "/images/audio1.jpg",
-      href: "/services/audio",
-    },
-    {
-      name: "Stage Lighting",
-      
-      description: "Dynamic lighting design that transforms your event with spectacular visual effects.",
-      features: ["LED Moving Lights", "Intelligent Fixtures", "Haze & Fog Effects", "DMX Control Systems"],
-      image: "/images/lighting/light4.jpg",
-      href: "/services/lighting",
-    },
-    {
-      name: "Visual Solutions",
-      
-      description: "High-resolution LED displays and projection systems for impactful visual presentations.",
-      features: ["LED Video Walls", "Projection Mapping", "Live Camera Systems", "Content Management"],
-      image: "/images/visual/visual2.jpg",
-      href: "/services/visual",
-    },
-    {
-      name: "Event Production",
-      
-      description: "Complete event production including rigging, trussing, livestreaming, and power solutions.",
-      features: ["Rigging & Trussing", "Livestreaming", "Power Distribution", "Project Management"],
-      image: "/images/events/event2.jpg",
-      href: "/services/production",
-    },
-    {
-      name: "Dance Floor",
-      
-      description:
-        "Create the perfect space with premium flooring solutions to elevate your exhibition or dance the night away, often enhanced by lighting and effects to create the desired atmosphere.",
-      features: ["LED Dance Floors", "Black and White", "Glossy Dance Floors", "Portable Dance Floors", "Underflooring"],
-      image: "/images/dancefloor/dance2.jpg",
-      href: "/services/dancefloor",
-    },
-  ]
+  const services = allServices.map((s) => ({
+    name: s.name,
+    description: s.summary,
+    features: s.features,
+    image: s.cardImage,
+    href: s.href,
+    cta: s.cta,
+  }))
 
   return (
     <section id="services" className="py-24 bg-gray-50">
@@ -75,7 +40,7 @@ export function ServicesSection() {
                 <div className="aspect-[16/9] relative overflow-hidden">
                   <Image
                     src={service.image || "/placeholder.svg"}
-                    alt={service.name}
+                    alt={`${service.name} for events in Cape Town`}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
@@ -108,7 +73,7 @@ export function ServicesSection() {
                       
                       className="bg-black hover:bg-gray-800 text-white py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      Learn More
+                      {service.cta}
                     </Button>
                   </Link>
                 </div>
@@ -152,7 +117,7 @@ export function ServicesSection() {
                           variant="outline"
                           className="bg-black hover:bg-gray-800 text-white py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                         >
-                          Learn More
+                          {services[4].cta}
                         </Button>
                       </Link>
                     </div>
@@ -162,7 +127,7 @@ export function ServicesSection() {
                   <div className="aspect-[4/3] lg:aspect-auto lg:h-full relative overflow-hidden">
                     <Image
                       src={services[4].image || "/placeholder.svg"}
-                      alt={services[4].name}
+                      alt="Dance floor hire for events in Cape Town"
                       fill
                       className="object-cover hover:scale-105 transition-transform duration-500"
                     />
@@ -178,7 +143,7 @@ export function ServicesSection() {
                     <div className="aspect-[16/9] relative overflow-hidden">
                       <Image
                         src={services[4].image || "/placeholder.svg"}
-                        alt={services[4].name}
+                        alt="Dance floor hire for events in Cape Town"
                         fill
                         className="object-cover group-hover:scale-110 transition-transform duration-500"
                       />
@@ -215,7 +180,7 @@ export function ServicesSection() {
                         
                           className="w-full bg-black hover:bg-gray-800 text-white py-4 rounded-xl shadow-lg hover:text-white hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                         >
-                          Learn More
+                          {services[4].cta}
                         </Button>
                       </Link>
                     </div>
